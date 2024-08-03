@@ -152,11 +152,11 @@
 	/* adi,average; */
 };
 
-&uart0 {
+&uart1 {
 	/* enable-pin = <&ssw0 5 GPIO_ACTIVE_LOW>;	 UART0_EN */
 	/* hwflow-en-pin = <&ssw0 6 GPIO_ACTIVE_LOW>;  UART0_FLOW_EN */
 	pinctrl-names = "default";
-	pinctrl-0 = <&uart0_default>;
+	pinctrl-0 = <&uart1_default>;
 	status = "okay";
 };
 
@@ -306,18 +306,18 @@
 			line-name = "~spi2flash-cs";
 		};
 
-		uart0 {
+		uart1 {
 			gpio-hog;
 			gpios = <5 0x0>;
 			output-low;
-			line-name = "~uart0-en";
+			line-name = "~uart1-en";
 		};
 
-		uart0-flow-en {
+		uart1-flow-en {
 			gpio-hog;
 			gpios = <6 0x0>;
 			output-high;
-			line-name = "~uart0-flow-en";
+			line-name = "~uart1-flow-en";
 		};
 
 		emmc {
@@ -358,18 +358,18 @@
 };
 
 &pinctrl0 {
-	uart0_default: uart0_default_pins {
+	uart1_default: uart1_default_pins {
 		pins {
-			pinmux = <ADI_ADSP_PINMUX('A', 6, ADI_ADSP_PINFUNC_ALT1)>,
-					 <ADI_ADSP_PINMUX('A', 7, ADI_ADSP_PINFUNC_ALT1)>;
+			pinmux = <ADI_ADSP_PINMUX('A', 14, ADI_ADSP_PINFUNC_ALT1)>,
+					 <ADI_ADSP_PINMUX('A', 15, ADI_ADSP_PINFUNC_ALT1)>;
 		};
 	};
-	uart0_hwflow: uart0_hwflow_pins {
+	uart1_hwflow: uart1_hwflow_pins {
 		pins {
-			pinmux = <ADI_ADSP_PINMUX('A', 6, ADI_ADSP_PINFUNC_ALT1)>,
-					 <ADI_ADSP_PINMUX('A', 7, ADI_ADSP_PINFUNC_ALT1)>,
-					 <ADI_ADSP_PINMUX('A', 8, ADI_ADSP_PINFUNC_ALT1)>,
-					 <ADI_ADSP_PINMUX('A', 9, ADI_ADSP_PINFUNC_ALT1)>;
+			pinmux = <ADI_ADSP_PINMUX('A', 14, ADI_ADSP_PINFUNC_ALT1)>,
+					 <ADI_ADSP_PINMUX('A', 15, ADI_ADSP_PINFUNC_ALT1)>,
+					 <ADI_ADSP_PINMUX('B', 0, ADI_ADSP_PINFUNC_ALT1)>,
+					 <ADI_ADSP_PINMUX('B', 1, ADI_ADSP_PINFUNC_ALT1)>;
 		};
 	};
 	spi0_default: spi0_default_pins {
@@ -417,12 +417,7 @@
 				 <ADI_ADSP_PINMUX('D', 4, ADI_ADSP_PINFUNC_ALT2)>;
 		};
 	};
-	i2c2_pins: i2c2_default_pins {
-		pins {
-			pinmux = <ADI_ADSP_PINMUX('A', 14, ADI_ADSP_PINFUNC_ALT0)>,
-				 <ADI_ADSP_PINMUX('A', 15, ADI_ADSP_PINFUNC_ALT0)>;
-		};
-	};
+
 	eth0_default: eth0_default_pins {
 		pins {
 			pinmux = <ADI_ADSP_PINMUX('H', 3, ADI_ADSP_PINFUNC_ALT0)>,
