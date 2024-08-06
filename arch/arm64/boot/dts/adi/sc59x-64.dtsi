@@ -299,7 +299,7 @@
 				     <GIC_SPI 139 IRQ_TYPE_LEVEL_HIGH>,
 				     <GIC_SPI 140 IRQ_TYPE_LEVEL_HIGH>;
 			adi,use-edbo;
-			status = "disabled";
+			status = "okay";
 		};
 
 		uart1: uart@0x31003400 {
@@ -315,7 +315,7 @@
 				     <GIC_SPI 142 IRQ_TYPE_LEVEL_HIGH>,
 				     <GIC_SPI 143 IRQ_TYPE_LEVEL_HIGH>;
 			adi,use-edbo;
-			status = "disabled";
+			status = "okay";
 		};
 
 		uart2: uart@0x31003800 {
